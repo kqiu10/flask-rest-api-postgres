@@ -36,7 +36,7 @@ def add_claims_to_jwt(identity):  # Remember identity is what we define when cre
         return {'is_admin': True}
     return {'is_admin': False}
 
-@hwt.token_in_blacklist_loader
+@jwt.token_in_blacklist_loader
 def check_if_token_in_blacklist(decrypted_token):
     return decrypted_token['jti'] in BLACKLIST
 
